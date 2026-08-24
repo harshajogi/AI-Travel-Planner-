@@ -76,6 +76,30 @@ The project combines **AI itinerary generation**, **real-world location data**, 
 | **Git & GitHub** | Version control |
 
 ---
+## 📁 Project Structure
+
+```text
+AI-Travel-Planner/
+│
+├── app/
+│   ├── api/
+│   │   └── generate-trip/
+│   │       └── route.ts
+│   │
+│   ├── components/
+│   │   └── TravelMap.tsx
+│   │
+│   ├── page.tsx
+│   ├── layout.tsx
+│   └── globals.css
+│
+├── public/
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+---
 
 ## 🏗️ Architecture
 
@@ -121,3 +145,38 @@ The project combines **AI itinerary generation**, **real-world location data**, 
           │ Day 2        │   │ 📍 Markers   │
           │ Day 3        │   │              │
           └──────────────┘   └──────────────┘
+# 👨‍💻 Author
+
+## Harsha Jogi
+
+B.Tech CSE student interested in:
+
+- Software Development
+- Artificial Intelligence
+- Full-Stack Development
+- APIs
+- Machine Learning
+- Data Structures & Algorithms
+
+This project was built as a hands-on exploration of integrating AI, location services, APIs, and interactive maps into a modern web application.
+
+---
+
+# ⭐ Acknowledgements
+
+Special thanks to the technologies and services used in this project:
+
+- **Next.js**
+- **React**
+- **OpenRouter**
+- **Geoapify**
+- **Leaflet**
+- **React-Leaflet**
+- **OpenStreetMap**
+- **Tailwind CSS**
+
+---
+
+# 📄 License
+
+This project is created for educational and portfolio purposes.
