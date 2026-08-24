@@ -27,13 +27,16 @@ The project combines **AI itinerary generation**, **real-world location data**, 
 - 🤖 **AI-Powered Itinerary Generation**
   - Generates personalized travel plans using an LLM through OpenRouter.
   - Creates morning, afternoon, and evening activities for each day.
+  - Adapts the itinerary according to destination, budget, trip duration, travel style, and number of travelers.
 
 - 💰 **Budget-Based Planning**
   - Takes the user's budget into account.
-  - Calculates estimated costs for individual days and the complete trip.
+  - Provides estimated costs for individual days and the complete trip.
+  - Supports both budget-friendly and luxury travel planning.
 
 - 👥 **Multiple Travelers**
   - Allows users to specify the number of travelers.
+  - Uses the number of travelers when planning and estimating trip costs.
 
 - 🎯 **Multiple Travel Styles**
   - Adventure
@@ -45,18 +48,21 @@ The project combines **AI itinerary generation**, **real-world location data**, 
 
 - 📍 **Real-World Locations**
   - Uses Geoapify to retrieve real places and geographic coordinates.
-  - The AI uses verified locations instead of randomly inventing attractions.
+  - Provides actual locations for the generated itinerary.
+  - Reduces the possibility of completely fictional attractions.
 
 - 🗺️ **Interactive Map**
   - Displays recommended locations using Leaflet.
-  - Places markers using real latitude and longitude coordinates.
+  - Uses real latitude and longitude coordinates.
+  - Allows users to visually explore recommended destinations.
 
 - ⏳ **Loading State**
-  - Shows a loading animation while the AI generates the itinerary.
-  - Prevents multiple requests from being submitted accidentally.
+  - Displays a loading animation while the itinerary is being generated.
+  - Prevents accidental multiple submissions.
 
 - 📱 **Responsive Interface**
-  - Designed for both desktop and mobile screens.
+  - Designed for desktop, laptop, tablet, and mobile screens.
+  - Uses Tailwind CSS for responsive styling.
 
 ---
 
@@ -72,10 +78,13 @@ The project combines **AI itinerary generation**, **real-world location data**, 
 | **Geoapify** | Geocoding and real-world places |
 | **Leaflet** | Interactive maps |
 | **React-Leaflet** | Leaflet integration with React |
+| **OpenStreetMap** | Map data |
 | **Node.js** | Runtime environment |
-| **Git & GitHub** | Version control |
+| **Git** | Version control |
+| **GitHub** | Source code hosting |
 
 ---
+
 ## 📁 Project Structure
 
 ```text
@@ -94,11 +103,19 @@ AI-Travel-Planner/
 │   └── globals.css
 │
 ├── public/
+│
+├── screenshots/
+│   ├── home.png
+│   ├── trip.png
+│   └── map.png
+│
 ├── .env.example
 ├── .gitignore
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
+
 ---
 
 ## 🏗️ Architecture
@@ -145,9 +162,179 @@ AI-Travel-Planner/
           │ Day 2        │   │ 📍 Markers   │
           │ Day 3        │   │              │
           └──────────────┘   └──────────────┘
-# 👨‍💻 Author
+```
 
-## Harsha Jogi
+---
+
+## 🔄 Application Workflow
+
+```text
+                    👤 User
+                       │
+                       ▼
+             ┌─────────────────────┐
+             │   Enter Trip Details │
+             │                     │
+             │ • Destination       │
+             │ • Budget            │
+             │ • Number of Days    │
+             │ • Travelers         │
+             │ • Travel Style      │
+             └──────────┬──────────┘
+                        │
+                        ▼
+               ┌─────────────────┐
+               │ Next.js Frontend│
+               └────────┬────────┘
+                        │
+                        │ POST Request
+                        ▼
+             ┌─────────────────────┐
+             │ /api/generate-trip  │
+             │      API Route      │
+             └──────────┬──────────┘
+                        │
+               ┌────────┴────────┐
+               │                 │
+               ▼                 ▼
+        ┌──────────────┐  ┌──────────────┐
+        │   Geoapify   │  │  OpenRouter  │
+        │              │  │              │
+        │ Real Places  │  │ AI Planning  │
+        │ Coordinates  │  │ Itinerary    │
+        └──────┬───────┘  └──────┬───────┘
+               │                 │
+               └────────┬────────┘
+                        ▼
+               ┌─────────────────┐
+               │ Structured Trip │
+               │      Data       │
+               └────────┬────────┘
+                        │
+               ┌────────┴────────┐
+               ▼                 ▼
+        ┌──────────────┐  ┌──────────────┐
+        │  Trip Cards  │  │    Leaflet   │
+        │              │  │     Map      │
+        │ Day-by-Day   │  │ 📍 Markers   │
+        │ Activities   │  │ 📍 Locations │
+        └──────────────┘  └──────────────┘
+```
+
+---
+
+
+## 📱 Responsive Design
+
+The application is designed for:
+
+- 💻 Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📲 Tablet
+
+Tailwind CSS is used to create responsive layouts and UI components.
+
+---
+
+
+## 🔮 Future Improvements
+
+Possible future improvements include:
+
+- 🏨 Hotel recommendations
+- ✈️ Flight search integration
+- 🚆 Transportation planning
+- 🌦️ Weather-based itinerary adjustments
+- 💳 Live travel price estimation
+- 🗺️ Automatic route optimization
+- 🔐 User authentication
+- 💾 Save and load previous trips
+- 📤 Export itinerary as PDF
+- 📅 Calendar integration
+- 🌐 Multi-language support
+- ⭐ User ratings and reviews
+- 🍽️ Restaurant recommendations
+- 📍 Nearby places discovery
+- 🔄 Automatic itinerary regeneration
+- 📊 Detailed budget breakdown
+- 🧭 Distance and travel-time calculations
+
+---
+
+## 🎓 Educational Purpose
+
+This project was created as a hands-on learning project to understand how modern web applications can combine multiple technologies into a single full-stack application.
+
+The project provides practical experience with:
+
+- 🤖 Artificial Intelligence
+- 🌐 REST APIs
+- 📍 Geolocation services
+- 🗺️ Interactive maps
+- ⚛️ React
+- ▲ Next.js
+- 📘 TypeScript
+- 🎨 Tailwind CSS
+- 🔌 API integration
+- 🖥️ Full-stack web development
+- 📊 Structured data processing
+- 🔐 Environment variables and API security
+
+---
+
+## 📚 What I Learned
+
+Through this project, I gained practical experience in:
+
+- Building applications with Next.js
+- Creating React components
+- Working with TypeScript
+- Designing responsive interfaces
+- Creating backend API routes
+- Integrating third-party APIs
+- Working with AI APIs
+- Using location and geocoding APIs
+- Integrating interactive maps
+- Handling asynchronous API requests
+- Managing loading and error states
+- Working with environment variables
+- Structuring a full-stack project
+- Using Git and GitHub for version control
+
+---
+
+## 🌟 Project Highlights
+
+### 🤖 AI + Real-World Data
+
+The project combines AI-powered travel planning with real-world location data to create more useful and realistic itineraries.
+
+### 🗺️ AI + Interactive Maps
+
+Generated travel recommendations are connected to an interactive map so users can visually explore the suggested locations.
+
+### 💰 Personalized Planning
+
+The itinerary is generated based on:
+
+- Destination
+- Budget
+- Number of days
+- Number of travelers
+- Travel style
+
+### ⚡ Modern Web Stack
+
+The project combines:
+
+**Next.js + React + TypeScript + Tailwind CSS + OpenRouter + Geoapify + Leaflet**
+
+---
+
+## 👨‍💻 Author
+
+### Harsha Jogi
 
 B.Tech CSE student interested in:
 
@@ -162,7 +349,7 @@ This project was built as a hands-on exploration of integrating AI, location ser
 
 ---
 
-# ⭐ Acknowledgements
+## ⭐ Acknowledgements
 
 Special thanks to the technologies and services used in this project:
 
@@ -177,6 +364,12 @@ Special thanks to the technologies and services used in this project:
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is created for educational and portfolio purposes.
+
+---
+
+## ⭐ Support
+
+If you found this project interesting or useful, consider giving the repository a ⭐ on GitHub!
