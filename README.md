@@ -6,39 +6,39 @@ The project combines **AI itinerary generation**, **real-world location data**, 
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### 🏠 Home / Travel Planner
+###  Home / Travel Planner
 
 ![Home Page](./screenshots/home.png)
 
-### ✈️ Generated Trip
+###  Generated Trip
 
 ![Generated Trip](./screenshots/trip.png)
 
-### 🗺️ Interactive Map
+###  Interactive Map
 
 ![Interactive Map](./screenshots/map.png)
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🤖 **AI-Powered Itinerary Generation**
+-  **AI-Powered Itinerary Generation**
   - Generates personalized travel plans using an LLM through OpenRouter.
   - Creates morning, afternoon, and evening activities for each day.
   - Adapts the itinerary according to destination, budget, trip duration, travel style, and number of travelers.
 
-- 💰 **Budget-Based Planning**
+-  **Budget-Based Planning**
   - Takes the user's budget into account.
   - Provides estimated costs for individual days and the complete trip.
   - Supports both budget-friendly and luxury travel planning.
 
-- 👥 **Multiple Travelers**
+-  **Multiple Travelers**
   - Allows users to specify the number of travelers.
   - Uses the number of travelers when planning and estimating trip costs.
 
-- 🎯 **Multiple Travel Styles**
+-  **Multiple Travel Styles**
   - Adventure
   - Relaxation
   - Family
@@ -228,37 +228,37 @@ AI-Travel-Planner/
 
 The application is designed for:
 
-- 💻 Desktop
-- 💻 Laptop
-- 📱 Mobile
-- 📲 Tablet
+-  Desktop
+-  Laptop
+-  Mobile
+-  Tablet
 
 Tailwind CSS is used to create responsive layouts and UI components.
 
 ---
 
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 Possible future improvements include:
 
-- 🏨 Hotel recommendations
-- ✈️ Flight search integration
-- 🚆 Transportation planning
-- 🌦️ Weather-based itinerary adjustments
-- 💳 Live travel price estimation
-- 🗺️ Automatic route optimization
-- 🔐 User authentication
-- 💾 Save and load previous trips
-- 📤 Export itinerary as PDF
-- 📅 Calendar integration
-- 🌐 Multi-language support
-- ⭐ User ratings and reviews
-- 🍽️ Restaurant recommendations
-- 📍 Nearby places discovery
-- 🔄 Automatic itinerary regeneration
-- 📊 Detailed budget breakdown
-- 🧭 Distance and travel-time calculations
+-  Hotel recommendations
+-  Flight search integration
+-  Transportation planning
+-  Weather-based itinerary adjustments
+-  Live travel price estimation
+-  Automatic route optimization
+-  User authentication
+-  Save and load previous trips
+-  Export itinerary as PDF
+-  Calendar integration
+-  Multi-language support
+-  User ratings and reviews
+-  Restaurant recommendations
+-  Nearby places discovery
+-  Automatic itinerary regeneration
+-  Detailed budget breakdown
+-  Distance and travel-time calculations
 
 ---
 
@@ -268,22 +268,22 @@ This project was created as a hands-on learning project to understand how modern
 
 The project provides practical experience with:
 
-- 🤖 Artificial Intelligence
-- 🌐 REST APIs
-- 📍 Geolocation services
-- 🗺️ Interactive maps
-- ⚛️ React
-- ▲ Next.js
-- 📘 TypeScript
-- 🎨 Tailwind CSS
-- 🔌 API integration
-- 🖥️ Full-stack web development
-- 📊 Structured data processing
-- 🔐 Environment variables and API security
+-  Artificial Intelligence
+-  REST APIs
+-  Geolocation services
+-  Interactive maps
+-  React
+-  Next.js
+-  TypeScript
+-  Tailwind CSS
+-  API integration
+-  Full-stack web development
+-  Structured data processing
+-  Environment variables and API security
 
 ---
 
-## 📚 What I Learned
+##  What I Learned
 
 Through this project, I gained practical experience in:
 
@@ -306,15 +306,15 @@ Through this project, I gained practical experience in:
 
 ## 🌟 Project Highlights
 
-### 🤖 AI + Real-World Data
+###  AI + Real-World Data
 
 The project combines AI-powered travel planning with real-world location data to create more useful and realistic itineraries.
 
-### 🗺️ AI + Interactive Maps
+###  AI + Interactive Maps
 
 Generated travel recommendations are connected to an interactive map so users can visually explore the suggested locations.
 
-### 💰 Personalized Planning
+###  Personalized Planning
 
 The itinerary is generated based on:
 
@@ -324,7 +324,7 @@ The itinerary is generated based on:
 - Number of travelers
 - Travel style
 
-### ⚡ Modern Web Stack
+###  Modern Web Stack
 
 The project combines:
 
@@ -332,7 +332,7 @@ The project combines:
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 ### Harsha Jogi
 
@@ -349,7 +349,7 @@ This project was built as a hands-on exploration of integrating AI, location ser
 
 ---
 
-## ⭐ Acknowledgements
+##  Acknowledgements
 
 Special thanks to the technologies and services used in this project:
 
@@ -364,12 +364,12 @@ Special thanks to the technologies and services used in this project:
 
 ---
 
-## 📄 License
+##  License
 
 This project is created for educational and portfolio purposes.
 
 ---
 
-## ⭐ Support
+##  Support
 
 If you found this project interesting or useful, consider giving the repository a ⭐ on GitHub!
