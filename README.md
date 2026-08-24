@@ -10,16 +10,17 @@ The project combines **AI itinerary generation**, **real-world location data**, 
 
 ###  Home / Travel Planner
 
-![Home Page](<img width="1819" height="710" alt="Screenshot 2026-08-23 205814" src="https://github.com/user-attachments/assets/2b5bbca2-7ce7-426a-accf-61e0c5e51635" />
+(<img width="1819" height="710" alt="Screenshot 2026-08-23 205814" src="https://github.com/user-attachments/assets/701efd41-bad1-4b24-9e1c-0c8eb8d61e4b" />
 )
 
 ###  Generated Trip
 
-![Generated Trip](./screenshots/trip.png)
+(<img width="1829" height="688" alt="Screenshot 2026-08-23 205829" src="https://github.com/user-attachments/assets/2a770b68-43c7-4153-884f-3d04e20ae549" />)
 
 ###  Interactive Map
 
-![Interactive Map](./screenshots/map.png)
+(<img width="1830" height="680" alt="Screenshot 2026-08-23 205859" src="https://github.com/user-attachments/assets/99f196ff-c474-42d9-a519-a5cf811b507c" />
+)
 
 ---
 
