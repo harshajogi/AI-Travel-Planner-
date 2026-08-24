@@ -1,115 +1,123 @@
-
 # ✈️ AI Travel Planner
 
-AI-powered travel planner that creates personalized day-by-day itineraries based on destination, budget, travel style, and number of travelers.
+An AI-powered travel planning web application that creates personalized, budget-aware, day-by-day travel itineraries based on the user's destination, budget, number of days, travel style, and number of travelers.
+
+The project combines **AI itinerary generation**, **real-world location data**, and an **interactive map** to provide a complete travel-planning experience.
+
+---
 
 ## 📸 Screenshots
 
-### 🏠 Travel Planner Interface
-<!-- Add your screenshot here -->
+### 🏠 Home / Travel Planner
+
+![Home Page](./screenshots/home.png)
 
 ### ✈️ Generated Trip
-<!-- Add your screenshot here -->
+
+![Generated Trip](./screenshots/trip.png)
 
 ### 🗺️ Interactive Map
-<!-- Add your screenshot here -->
 
-## 🚀 Features
+![Interactive Map](./screenshots/map.png)
 
-- 🤖 AI-generated personalized travel itineraries
-- 💰 Budget-based trip planning
-- 👥 Supports multiple travelers
-- 📅 Day-by-day itinerary generation
-- 🎯 Multiple travel styles
-- 📍 Real-world locations using Geoapify
-- 🗺️ Interactive maps using Leaflet
-- 💵 Estimated daily and total trip costs
-- ⏳ Loading indicator while generating trips
-- 📱 Responsive user interface
+---
 
-## 🛠️ Technologies Used
+## ✨ Features
 
-### Frontend
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Leaflet
-- React-Leaflet
+- 🤖 **AI-Powered Itinerary Generation**
+  - Generates personalized travel plans using an LLM through OpenRouter.
+  - Creates morning, afternoon, and evening activities for each day.
 
-### Backend & APIs
-- Next.js API Routes
-- OpenRouter API
-- Geoapify API
+- 💰 **Budget-Based Planning**
+  - Takes the user's budget into account.
+  - Calculates estimated costs for individual days and the complete trip.
 
-### Tools
-- VS Code
-- Node.js
-- npm
-- Git
-- GitHub
+- 👥 **Multiple Travelers**
+  - Allows users to specify the number of travelers.
 
-## 🔄 How It Works
+- 🎯 **Multiple Travel Styles**
+  - Adventure
+  - Relaxation
+  - Family
+  - Romantic
+  - Luxury
+  - Budget
 
-1. User enters the destination, budget, number of days, number of travelers, and travel style.
-2. The application sends the information to the Next.js backend.
-3. Geoapify is used to find real-world places and their coordinates.
-4. The verified location data is provided to the AI through OpenRouter.
-5. The AI generates a structured day-by-day itinerary.
-6. The itinerary is displayed as organized trip cards.
-7. The recommended locations are displayed on an interactive Leaflet map.
+- 📍 **Real-World Locations**
+  - Uses Geoapify to retrieve real places and geographic coordinates.
+  - The AI uses verified locations instead of randomly inventing attractions.
 
-## 🧠 AI Integration
+- 🗺️ **Interactive Map**
+  - Displays recommended locations using Leaflet.
+  - Places markers using real latitude and longitude coordinates.
 
-OpenRouter is used to generate the travel itinerary.
+- ⏳ **Loading State**
+  - Shows a loading animation while the AI generates the itinerary.
+  - Prevents multiple requests from being submitted accidentally.
 
-The AI receives:
-- Destination
-- Budget
-- Number of days
-- Number of travelers
-- Travel style
-- Verified real-world locations
+- 📱 **Responsive Interface**
+  - Designed for both desktop and mobile screens.
 
-The model returns structured JSON containing the itinerary, activities, places, and estimated costs.
+---
 
-## 📍 Location Integration
+## 🛠️ Tech Stack
 
-Geoapify provides real-world location data including:
+| Technology | Purpose |
+|---|---|
+| **Next.js** | Full-stack React framework |
+| **React** | User interface |
+| **TypeScript** | Type-safe development |
+| **Tailwind CSS** | Styling and responsive design |
+| **OpenRouter** | AI itinerary generation |
+| **Geoapify** | Geocoding and real-world places |
+| **Leaflet** | Interactive maps |
+| **React-Leaflet** | Leaflet integration with React |
+| **Node.js** | Runtime environment |
+| **Git & GitHub** | Version control |
 
-- Place names
-- Coordinates
-- Addresses
-- Geographic information
+---
 
-This helps the application use actual locations instead of relying entirely on AI-generated place names.
-
-## 🗺️ Map Integration
-
-Leaflet and React-Leaflet are used to display the recommended locations on an interactive map.
-
-Each location can be represented using a map marker based on its latitude and longitude.
-
-## 📁 Project Structure
+## 🏗️ Architecture
 
 ```text
-AI-Travel-Planner/
-│
-├── app/
-│   ├── api/
-│   │   └── generate-trip/
-│   │       └── route.ts
-│   │
-│   ├── components/
-│   │   └── TravelMap.tsx
-│   │
-│   ├── page.tsx
-│   ├── layout.tsx
-│   └── globals.css
-│
-├── public/
-├── .env.example
-├── .gitignore
-├── package.json
-├── package-lock.json
-└── README.md
+                         👤 User
+                           │
+                           ▼
+                 ┌───────────────────┐
+                 │   Next.js / React │
+                 │     Frontend      │
+                 └─────────┬─────────┘
+                           │
+                           │ POST Request
+                           ▼
+                 ┌───────────────────┐
+                 │ /api/generate-trip│
+                 │    API Route      │
+                 └─────────┬─────────┘
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+              ▼                         ▼
+     ┌─────────────────┐       ┌─────────────────┐
+     │    Geoapify     │       │    OpenRouter   │
+     │                 │       │                 │
+     │ Real places     │       │ AI generation   │
+     │ Coordinates     │       │ Trip planning   │
+     └────────┬────────┘       └────────┬────────┘
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                  ┌─────────────────┐
+                  │ Structured JSON │
+                  │  Trip Response  │
+                  └────────┬────────┘
+                           │
+                  ┌────────┴────────┐
+                  ▼                 ▼
+          ┌──────────────┐   ┌──────────────┐
+          │  Trip Cards  │   │    Leaflet   │
+          │              │   │     Map      │
+          │ Day 1        │   │ 📍 Places    │
+          │ Day 2        │   │ 📍 Markers   │
+          │ Day 3        │   │              │
+          └──────────────┘   └──────────────┘
